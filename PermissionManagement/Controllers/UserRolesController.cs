@@ -21,7 +21,7 @@ namespace PermissionManagement.Controllers
             _roleManager = roleManager;
         }
 
-
+        [HttpGet]
         public async Task<IActionResult> Index(string userId)
         {
             var viewModel = new List<UserRolesViewModel>();
@@ -50,6 +50,7 @@ namespace PermissionManagement.Controllers
             };
             return View(model);
         }
+        [HttpPost]
         public async Task<IActionResult> Update(string id,ManageUserRolesViewModel model)
         {
             var user= await _userManager.FindByIdAsync(id);

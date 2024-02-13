@@ -13,6 +13,7 @@ namespace PermissionManagement.Controllers
         {
             _userManager = userManager;
         }
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var currentUser = await _userManager.GetUserAsync(HttpContext.User);

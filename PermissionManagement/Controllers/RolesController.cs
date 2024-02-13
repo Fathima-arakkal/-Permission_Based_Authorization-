@@ -13,6 +13,7 @@ namespace PermissionManagement.Controllers
         {
             _roleManager = roleManager;
         }
+        [HttpGet]
         public async Task<IActionResult> Index()
 
         {

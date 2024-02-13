@@ -18,6 +18,7 @@ namespace PermissionManagement.Controllers
             _roleManager = roleManager;
 
         }
+        [HttpGet]
         public async Task<IActionResult> Index (String roleId)
 
         {
@@ -45,6 +46,7 @@ namespace PermissionManagement.Controllers
             model.RoleClaims = allPermissions;
             return View(model);
         }
+        [HttpPost]
         public async Task<IActionResult> Update (PermissionViewModel model)
         {
             var role = await _roleManager.FindByIdAsync (model.RoleId);
